@@ -7,10 +7,8 @@ const fileToSha256Hex = async (file) => {
 const fileToArrayBuffer = async (file) => {
   return new Promise(function (resolve, reject) {
     const reader = new FileReader();
-    console.log(reader);
     const readFile = function (event) {
       const buffer = reader.result;
-      console.log(buffer);
       resolve(buffer);
     };
 
