@@ -59,7 +59,25 @@
             <div class="tab-pane fade active show" id="generateKeysTab" role="tabpanel">
               <div class="row justify-content-between p-3">
                 <div class="col-sm-4 px-4">
-                  <h3 class="title-tab mb-3">Nhập số nguyên tố</h3>
+                  <h3 class="title-tab mb-3">Cặp số nguyên tố</h3>
+                  <div class="row mb-3">
+                    <div class="col-sm-6">
+                      <div class="row mb-3">
+                        <label for="startNum" class="col-sm-2 col-form-label text-center">Từ</label>
+                        <div class="col-sm-10">
+                          <input type="text" class="form-control" id="startNum" value="10" />
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-sm-6">
+                      <div class="row mb-3">
+                        <label for="endNum" class="col-sm-2 col-form-label text-center">Đến</label>
+                        <div class="col-sm-10">
+                          <input type="text" class="form-control" id="endNum" value="100" />
+                        </div>
+                      </div>
+                    </div>
+                  </div>
                   <div class="row mb-3">
                     <label for="firstPrimeNum" class="col-sm-2 col-form-label text-center">P</label>
                     <div class="col-sm-10">
@@ -89,22 +107,25 @@
                   </div>
                 </div>
                 <div class="col-sm-4 px-4">
-                  <h3 class="title-tab mb-3">Khoá bí mật</h3>
+                  <h3 class="title-tab mb-3">
+                    Khoá bí mật
+                    <i class="fa-regular fa-eye fa-2xs" id="toggleEyeBtn1"></i>
+                  </h3>
                   <div class="row mb-3">
                     <label for="firstSecretNum1" class="col-sm-2 col-form-label text-center">D</label>
                     <div class="col-sm-10">
-                      <input type="text" class="form-control" id="firstSecretNum1" />
+                      <input type="password" class="form-control" id="firstSecretNum1" />
                     </div>
                   </div>
                   <div class="row mb-3">
                     <label for="secondSecretNum1" class="col-sm-2 col-form-label text-center">N</label>
                     <div class="col-sm-10">
-                      <input type="text" class="form-control" id="secondSecretNum1" />
+                      <input type="password" class="form-control" id="secondSecretNum1" />
                     </div>
                   </div>
                 </div>
               </div>
-              <div class="d-flex justify-content-between w-50 mx-auto">
+              <div class="d-flex justify-content-between w-75 mx-auto">
                 <button type="button" class="btn btn-outline-primary" id="randomPrimeNumsBtn">
                   <i class="fa-solid fa-shuffle me-1"></i>
                   Tạo số nguyên tố ngẫu nhiên
@@ -113,7 +134,11 @@
                   <i class="fa-solid fa-key me-1"></i>
                   Tạo các khoá
                 </button>
-                <button type="button" class="btn btn-outline-danger" id="clearBtn">
+                <button type="button" class="btn btn-outline-info" id="moveDataBtn1">
+                  <i class="fa-solid fa-arrow-right me-1"></i>
+                  Chuyển dữ liệu
+                </button>
+                <button type="button" class="btn btn-outline-danger" id="clearBtn1">
                   <i class="fa-solid fa-trash-can me-1"></i>
                   Xoá tất cả
                 </button>
@@ -121,7 +146,7 @@
             </div>
             <div class="tab-pane fade" id="createSignatureTab" role="tabpanel">
               <div class="row p-3">
-                <div class="col-sm-8 px-6">
+                <div class="col-sm-10 px-6">
                   <div class="row mb-3">
                     <label for="plainText1" class="col-sm-2 col-form-label">File cần ký</label>
                     <div class="col-sm-10">
@@ -129,14 +154,17 @@
                     </div>
                   </div>
                   <div class="row mb-3">
-                    <label class="col-sm-2 col-form-label">Khoá bí mật</label>
+                    <label class="col-sm-2 col-form-label">
+                      Khoá bí mật
+                      <i class="fa-regular fa-eye fa-xs" id="toggleEyeBtn2"></i>
+                    </label>
                     <div class="col-sm-10">
                       <div class="row">
                         <div class="col-sm-6">
                           <div class="row mb-3">
                             <label for="firstSecretNum2" class="col-sm-2 col-form-label text-center">D</label>
                             <div class="col-sm-10">
-                              <input type="text" class="form-control" id="firstSecretNum2" />
+                              <input type="password" class="form-control" id="firstSecretNum2" />
                             </div>
                           </div>
                         </div>
@@ -144,7 +172,7 @@
                           <div class="row mb-3">
                             <label for="secondSecretNum2" class="col-sm-2 col-form-label text-center">N</label>
                             <div class="col-sm-10">
-                              <input type="text" class="form-control" id="secondSecretNum2" />
+                              <input type="password" class="form-control" id="secondSecretNum2" />
                             </div>
                           </div>
                         </div>
@@ -154,13 +182,13 @@
                   <div class="row mb-3">
                     <label for="hashText1" class="col-sm-2 col-form-label">Giá trị băm</label>
                     <div class="col-sm-10">
-                      <textarea class="form-control" id="hashText1"></textarea>
+                      <textarea class="form-control" id="hashText1" rows="5"></textarea>
                     </div>
                   </div>
                   <div class="row mb-3">
                     <label for="signature1" class="col-sm-2 col-form-label">Chữ ký</label>
                     <div class="col-sm-10">
-                      <textarea class="form-control" id="signature1"></textarea>
+                      <textarea class="form-control" id="signature1" rows="5"></textarea>
                     </div>
                   </div>
                   <div class="d-flex justify-content-between w-75 mx-auto">
@@ -172,9 +200,13 @@
                       <i class="fa-solid fa-floppy-disk me-1"></i>
                       Lưu chữ ký
                     </button>
-                    <button type="button" class="btn btn-outline-danger" id="moveDataBtn">
+                    <button type="button" class="btn btn-outline-info" id="moveDataBtn2">
                       <i class="fa-solid fa-arrow-right me-1"></i>
                       Chuyển dữ liệu
+                    </button>
+                    <button type="button" class="btn btn-outline-danger" id="clearBtn2">
+                      <i class="fa-solid fa-trash-can me-1"></i>
+                      Xoá tất cả
                     </button>
                   </div>
                 </div>
@@ -182,7 +214,7 @@
             </div>
             <div class="tab-pane fade" id="verifySignatureTab" role="tabpanel">
               <div class="row p-3">
-                <div class="col-sm-8 px-6">
+                <div class="col-sm-10 px-6">
                   <div class="row mb-3">
                     <label for="plainText2" class="col-sm-2 col-form-label">File cần xác thực</label>
                     <div class="col-sm-10">
@@ -215,13 +247,13 @@
                   <div class="row mb-3">
                     <label for="hashText2" class="col-sm-2 col-form-label">Giá trị băm</label>
                     <div class="col-sm-10">
-                      <textarea class="form-control" id="hashText2"></textarea>
+                      <textarea class="form-control" id="hashText2" rows="5"></textarea>
                     </div>
                   </div>
                   <div class="row mb-3">
                     <label for="signature2" class="col-sm-2 col-form-label">Chữ ký</label>
                     <div class="col-sm-10">
-                      <textarea class="form-control" id="signature2"></textarea>
+                      <textarea class="form-control" id="signature2" rows="5"></textarea>
                     </div>
                   </div>
                   <div class="row mb-3">
@@ -237,7 +269,11 @@
                     </button>
                     <button type="button" class="btn btn-outline-primary" id="uploadSignatureBtn">
                       <i class="fa-solid fa-upload me-1"></i>
-                      Tải chữ ký
+                      Tải lên chữ ký
+                    </button>
+                    <button type="button" class="btn btn-outline-danger" id="clearBtn3">
+                      <i class="fa-solid fa-trash-can me-1"></i>
+                      Xoá tất cả
                     </button>
                   </div>
                 </div>

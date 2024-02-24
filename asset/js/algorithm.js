@@ -9,10 +9,10 @@ const generateRSAKeyPair = (p, q) => {
   return { publicKey, privateKey };
 };
 
-const getRandomPrime = (max = 100) => {
-  let prime = getRandomNumber(1, max);
+const getRandomPrime = (min = 1, max = 100) => {
+  let prime = getRandomNumber(min, max);
   while (!isPrime(prime)) {
-    prime = getRandomNumber(1, max);
+    prime = getRandomNumber(min, max);
   }
   return prime;
 };
