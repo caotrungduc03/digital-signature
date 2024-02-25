@@ -5,7 +5,6 @@ const generateRSAKeyPair = (p, q) => {
   const d = mul_inv(e, phi);
   const publicKey = { n, e };
   const privateKey = { n, d };
-
   return { publicKey, privateKey };
 };
 
@@ -25,17 +24,14 @@ const isPrime = (x) => {
   if (x <= 2) {
     return x === 2;
   }
-
   if (x % 2 === 0) {
     return false;
   }
-
   for (let i = 3; i * i <= x; i += 2) {
     if (x % i === 0) {
       return false;
     }
   }
-
   return true;
 };
 
@@ -76,24 +72,24 @@ const mul_inv = (a, n) => {
 const encrypt = (plainText, d, n) => {
   let cipherText = '';
   for (let char of plainText) {
-    let tmp = powMod(char.charCodeAt(0), d, n);
-    cipherText += tmp + '-';
+    let tmp = powMod(BigInt(char.charCodeAt(0)), BigInt(d), BigInt(n));
+    cipherText += Number(tmp) + '-';
   }
   return cipherText.slice(0, -1);
 };
 
 const powMod = (a, b, n) => {
-  if (b === 0) return 1;
-  const temp = powMod(a, b >> 1, n);
-  return (b & 1) === 0 ? (temp * temp) % n : (((temp * temp) % n) * a) % n;
+  if (b === 0n) return 1n;
+  const temp = powMod(a, b >> 1n, n);
+  return (b & 1n) === 0n ? (temp * temp) % n : (((temp * temp) % n) * a) % n;
 };
 
 const decrypt = (cipherText, e, n) => {
   const numbers = cipherText.split('-').map(Number);
   let plainText = '';
   for (let number of numbers) {
-    let tmp = powMod(number, e, n);
-    plainText += String.fromCharCode(tmp);
+    let tmp = powMod(BigInt(number), BigInt(e), BigInt(n));
+    plainText += String.fromCharCode(Number(tmp));
   }
   return plainText;
 };

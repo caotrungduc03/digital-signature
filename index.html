@@ -31,7 +31,7 @@
             <li class="nav-item" role="presentation">
               <a class="nav-link active" id="generateKeysNav" data-bs-toggle="tab" href="#generateKeysTab" role="tab">
                 <i class="fa-solid fa-key me-1 fa-xl"></i>
-                Tạo khoá
+                Tạo cặp khoá
               </a>
             </li>
             <li class="nav-item" role="presentation">
@@ -128,11 +128,11 @@
               <div class="d-flex justify-content-between w-75 mx-auto">
                 <button type="button" class="btn btn-outline-primary" id="randomPrimeNumsBtn">
                   <i class="fa-solid fa-shuffle me-1"></i>
-                  Tạo số nguyên tố ngẫu nhiên
+                  Tạo cặp số nguyên tố ngẫu nhiên
                 </button>
                 <button type="button" class="btn btn-outline-success" id="generateKeysBtn">
                   <i class="fa-solid fa-key me-1"></i>
-                  Tạo các khoá
+                  Tạo cặp khoá
                 </button>
                 <button type="button" class="btn btn-outline-info" id="moveDataBtn1">
                   <i class="fa-solid fa-arrow-right me-1"></i>
@@ -280,8 +280,36 @@
               </div>
             </div>
             <div class="tab-pane fade" id="guideTab" role="tabpanel">
-              <div class="card">
-                <div class="card-body">Tab 4 selected</div>
+              <div class="p-3">
+                <h3>Tạo cặp khoá</h3>
+                <ol>
+                  <li>Nhập vào phạm vi cặp số nguyên tố</li>
+                  <li>Nhập vào cặp số p, q hoặc click nút "Tạo cặp số nguyên tố ngẫu nhiên"</li>
+                  <li>Click nút "Tạo cặp khoá"</li>
+                  <li>
+                    Click nút "Chuyển dữ liệu" để chuyển khoá bí mật sang tab "Tạo chữ ký số" và khoá công khai sang tab
+                    "Xác thực chữ ký số"
+                  </li>
+                  <li>Click nút "Xoá tất cả" để làm trống các ô nhập</li>
+                </ol>
+                <h3>Tạo chữ ký số</h3>
+                <ol>
+                  <li>Chọn file cần ký</li>
+                  <li>Nhập vào khoá bí mật</li>
+                  <li>Click nút "Tạo chữ ký" để ký file</li>
+                  <li>Click nút "Lưu chữ ký" để tải xuống file chữ ký</li>
+                  <li>Click nút "Chuyển dữ liệu" để chuyển chữ ký sang tab "Xác thực chữ ký số"</li>
+                  <li>Click nút "Xoá tất cả" để làm trống các ô nhập</li>
+                </ol>
+                <h3>Xác thực chữ ký số</h3>
+                <ol>
+                  <li>Chọn file cần xác thực</li>
+                  <li>Nhập vào khoá công khai</li>
+                  <li>Nhập vào chữ ký</li>
+                  <li>Click nút "Xác thực chữ ký" để chứng thực file và chữ ký</li>
+                  <li>Click nút "Tải lên chữ ký" để tải lên file chữ ký</li>
+                  <li>Click nút "Xoá tất cả" để làm trống các ô nhập</li>
+                </ol>
               </div>
             </div>
           </div>
