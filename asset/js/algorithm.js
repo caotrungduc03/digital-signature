@@ -10,7 +10,9 @@ const generateRSAKeyPair = (p, q) => {
 
 const getRandomPrime = (min = 1, max = 100) => {
   let prime = getRandomNumber(min, max);
+  let count = 0;
   while (!isPrime(prime)) {
+    if (count++ > 1000) return -1;
     prime = getRandomNumber(min, max);
   }
   return prime;

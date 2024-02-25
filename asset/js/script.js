@@ -11,9 +11,9 @@ const handleRandomPrimeNums = (btnId) => {
 
     let p = getRandomPrime(startNum, endNum);
     let q = getRandomPrime(startNum, endNum);
-    let count = 1000;
+    let count = 0;
     while (p === q) {
-      if (!count--) return alert('Không tìm được 2 số nguyên tố khác nhau trong phạm vi!');
+      if (count++ > 1000) return alert('Không tìm được 2 số nguyên tố khác nhau trong phạm vi!');
       q = getRandomPrime(startNum, endNum);
     }
     $('#firstPrimeNum').val(p);
